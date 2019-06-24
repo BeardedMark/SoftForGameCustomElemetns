@@ -1,0 +1,114 @@
+﻿<Window x:Class="CustomFilter_1.Customization"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CustomFilter_1"
+        xmlns:wpfx="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Customization" Height="492.915" Width="654" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Images/IcoExe/CustomFilterWhite.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="220"/>
+        </Grid.RowDefinitions>
+
+        <Grid>
+            <Image x:Name="rayimage" Source="Images/Rays/White.jpg" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            <Image x:Name="raynone" Source="Images/Rays/None.jpg" Stretch="None" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        </Grid>
+        <Grid HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="2" Margin="10">
+            <Image Source="Images/map.png" Stretch="None" />
+            <Image x:Name="ico" Source="Images/IcoMap/Circle/White.png" Stretch="Fill" Width="15" Height="15"/>
+        </Grid>
+
+        <Grid x:Name="resize" Width="200" Height="40" Grid.Column="0" >
+            <TextBox x:Name="item" Grid.Column="10" Text="Item Preview" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#7F000000" BorderBrush="White" Foreground="White" FontSize="24" FontFamily="/CustomFilter 1;component/Fonts/#FrizQuadrataC"/>
+            <Grid Width="11" Height="11" HorizontalAlignment="Right" Margin="0,0,10,0">
+                <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="6" Height="2" Margin="1" Fill="#FFC3C3C3"/>
+                <Rectangle HorizontalAlignment="Right" VerticalAlignment="Top" Width="2" Height="6" Margin="1" Fill="#FFC3C3C3"/>
+                <Rectangle HorizontalAlignment="Left" VerticalAlignment="Top" Width="4" Height="4" Fill="#FF9ECB0D"/>
+                <Rectangle HorizontalAlignment="Right" VerticalAlignment="Top" Width="4" Height="4" Fill="#FFCA0D32"/>
+                <Rectangle HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="4" Height="4" Fill="#FF5882FE"/>
+            </Grid>
+            <Rectangle Fill="#00000000"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+
+            <StackPanel Margin="8">
+                <Label Content="Box Style:" FontWeight="Bold" FontSize="16"/>
+
+                <Slider x:Name="sizeslider" Minimum="11" Maximum="45" Value="45" ValueChanged="Slider_ValueChanged" Margin="0,2,0,2" TickPlacement="TopLeft" Cursor="Hand" IsSnapToTickEnabled="True"/>
+                <Label Content="Border color:"/>
+                <wpfx:ColorPicker SelectedColor="White" Name = "PickerBorder" DisplayColorAndName = "True" SelectedColorChanged="PickerBorder_SelectedColorChanged" />
+                <Label Content="Background color:"/>
+                <wpfx:ColorPicker SelectedColor="#7F000000" Name = "PickerBackground" DisplayColorAndName = "True" SelectedColorChanged="PickerBackground_SelectedColorChanged" />
+                <Label Content="Foreground color:"/>
+                <wpfx:ColorPicker SelectedColor="White" Name = "PickerForeground" DisplayColorAndName = "True" SelectedColorChanged="PickerForeground_SelectedColorChanged" />
+            </StackPanel>
+
+            <StackPanel Margin="8" Grid.Column="1">
+                <Label Content="Minimap Ico:" FontWeight="Bold" FontSize="16"/>
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton x:Name="vtrue" Content="Enable" Margin="0,4,0,4" Checked="Vtrue_Checked"/>
+                    <RadioButton x:Name="vfalse" Content="Disable" Margin="10,4,0,4" Checked="Vfalse_Checked"/>
+                </StackPanel>
+                <Label Content="Form:"/>
+                <ComboBox x:Name="icoform"/>
+                <Label Content="Size:"/>
+                <ComboBox x:Name="icosize">
+                    <TextBlock Text="Big"/>
+                    <TextBlock Text="Medium"/>
+                    <TextBlock Text="Small"/>
+                </ComboBox>
+                <Label Content="Color:"/>
+                <ComboBox x:Name="icocolor"/>
+            </StackPanel>
+
+            <StackPanel Margin="8" Grid.Column="2">
+                <Label Content="Effects:" FontWeight="Bold" FontSize="16"/>
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton x:Name="raytrue" Content="Enable" Margin="0,4,0,4" Checked="Raytrue_Checked"/>
+                    <RadioButton x:Name="rayfalse" Content="Disable" Margin="10,4,0,4" Checked="RadioButton_Checked"/>
+                </StackPanel>
+                <Label Content="Ray effect:"/>
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton Content="Perm." Margin="0,4,0,4" IsChecked="True"/>
+                    <RadioButton x:Name="temporary" Content="Temp." Margin="10,4,0,4"/>
+                </StackPanel>
+                <Label Content="Ray Color:"/>
+                <ComboBox x:Name="raycolor" SelectedIndex="0"/>
+            </StackPanel>
+
+            <StackPanel Margin="8" Grid.Column="4">
+                <Label Content="Sound:" FontWeight="Bold" FontSize="16"/>
+                <StackPanel Orientation="Horizontal">
+                    <RadioButton x:Name="strue" Content="Enable" Margin="0,4,0,4" Checked="strue_Checked"/>
+                    <RadioButton x:Name="sfalse" Content="Disable" Margin="10,4,0,4" Checked="sfalse_Checked"/>
+                </StackPanel>
+                <Label Content="Audio Sound:"/>
+                <ComboBox x:Name="folder" Margin="0,0,0,3" SelectionChanged="folder_SelectionChanged"/>
+                <ComboBox x:Name="file" Margin="0,0,0,3"/>
+
+                <Button Content="Play"/>
+            </StackPanel>
+
+            <Rectangle x:Name="blokray" VerticalAlignment="Bottom" Grid.Column="2" Height="100" Fill="#E5FFFFFF" Visibility="Visible" Margin="0,0,0,50"/>
+            <Rectangle x:Name="bloksound" VerticalAlignment="Bottom" Grid.Column="3" Height="100" Fill="#E5FFFFFF" Visibility="Visible" Margin="0,0,0,50" />
+            <Rectangle x:Name="blokico" VerticalAlignment="Bottom" Grid.Column="1" Height="150" Fill="#E5FFFFFF" Visibility="Visible" Margin="0,0,0,10"/>
+
+            <Button Content="Save" Click="Button_Click"  Grid.ColumnSpan="2" Grid.Column="2" VerticalAlignment="Bottom" Height="26" Margin="10,0,10,10" />
+
+        </Grid>
+
+
+    </Grid>
+</Window>

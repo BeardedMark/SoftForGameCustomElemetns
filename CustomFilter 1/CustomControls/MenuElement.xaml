@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="CustomFilter_1.CustomControls.MenuElement"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CustomFilter_1.CustomControls"
+             mc:Ignorable="d" 
+             Height="30" Width="auto"
+             VerticalAlignment="Top"
+             Margin="0,1,0,1">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle x:Name="Fon" Grid.ColumnSpan="9" Fill="#FF333337" Opacity="0.5"/>
+        <Grid x:Name="Active" Grid.ColumnSpan="3" Visibility="Hidden">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                    <GradientStop Color="#00007ACC" Offset="0"/>
+                    <GradientStop Color="#33007ACC" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+        <Image x:Name="Source" Grid.Column="0" Margin="5"/>
+        <TextBlock x:Name="Text" Grid.Column="5" Margin="5" Text="Simple Text" VerticalAlignment="Center" FontFamily="Calibri" Foreground="#FFB2B2B3" FontSize="16"/>
+        <Grid x:Name="Marker" Visibility="Hidden" Grid.ColumnSpan="10">
+            <!--<Rectangle Grid.ColumnSpan="10" Fill="#FF007ACC" Width="2" HorizontalAlignment="Left"/>-->
+            <Border BorderThickness="1">
+                <Border.BorderBrush>
+                    <LinearGradientBrush EndPoint="1,1" StartPoint="0,1">
+                        <GradientStop Color="#FF007ACC" Offset="0"/>
+                        <GradientStop Color="#00007ACC" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.BorderBrush>
+            </Border>
+        </Grid>
+
+        <Rectangle x:Name="Trigger" Grid.ColumnSpan="9" Fill="#00000000" MouseEnter="Trigger_MouseEnter" MouseLeave="Trigger_MouseLeave"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0120EFE8-1A17-44EB-90E2-6B3B63504A6F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CustomFilter_1</RootNamespace>
+    <AssemblyName>CustomFilter 1</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.5.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.5.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="CustomControls\CheckCustomBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\Cut.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomControls\MenuElement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Customization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomControls\CheckCustomBox.xaml.cs">
+      <DependentUpon>CheckCustomBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\Cut.xaml.cs">
+      <DependentUpon>Cut.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\MenuElement.xaml.cs">
+      <DependentUpon>MenuElement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Customization.xaml.cs">
+      <DependentUpon>Customization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Fonts\FrizQuadrataC.ttf" />
+    <Resource Include="Fonts\FrizQuadrataCTT Bold.ttf" />
+    <Resource Include="Fonts\FrizQuadrataCTT Regular.ttf" />
+    <Resource Include="Fonts\FrizQuadrataC_0.ttf" />
+    <Resource Include="Fonts\TrajanPro-Bold.otf" />
+    <Resource Include="Fonts\TrajanPro-Regular.otf" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\IcoItems\Gems.png" />
+    <Resource Include="Images\IcoItems\Essence.png" />
+    <Resource Include="Images\IcoItems\Maps.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\IcoItems\Orb_Chaos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\IcoItems\Items.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Wallapers\BG_ExileCon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\IcoExe\CustomFilterBlack.ico" />
+    <Resource Include="Images\IcoExe\CustomFilterWhite.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MenuHider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Wallapers\BG_Sandriya.jpg" />
+    <Resource Include="Images\Wallapers\BG_Masters.jpg" />
+    <Resource Include="Images\Wallapers\BG_Betrayal.jpg" />
+    <Resource Include="Images\Wallapers\BG_Delve.jpg" />
+    <Resource Include="Images\Wallapers\BG_Oriath.jpg" />
+    <Resource Include="Images\Wallapers\BG_Labyrint.jpg" />
+    <Resource Include="Images\Wallapers\BG_Atlas.jpg" />
+    <Resource Include="Images\Wallapers\BG_WarForAtlas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\21-03-2019 22-54-29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\05-04-2019 21-46-21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Rays\Blue.jpg" />
+    <Resource Include="Images\Rays\Brown.jpg" />
+    <Resource Include="Images\Rays\Green.jpg" />
+    <Resource Include="Images\Rays\None.jpg" />
+    <Resource Include="Images\Rays\Red.jpg" />
+    <Resource Include="Images\Rays\White.jpg" />
+    <Resource Include="Images\Rays\Yellow.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="06-04-2019 22-33-00.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\06-04-2019 22-33-00.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\IcoMap\Circle\Blue.png" />
+    <Resource Include="Images\IcoMap\Circle\Brown.png" />
+    <Resource Include="Images\IcoMap\Circle\Green.png" />
+    <Resource Include="Images\IcoMap\Circle\Red.png" />
+    <Resource Include="Images\IcoMap\Circle\White.png" />
+    <Resource Include="Images\IcoMap\Circle\Yellow.png" />
+    <Resource Include="Images\IcoMap\Diamond\Blue.png" />
+    <Resource Include="Images\IcoMap\Diamond\Brown.png" />
+    <Resource Include="Images\IcoMap\Diamond\Green.png" />
+    <Resource Include="Images\IcoMap\Diamond\Red.png" />
+    <Resource Include="Images\IcoMap\Diamond\White.png" />
+    <Resource Include="Images\IcoMap\Diamond\Yellow.png" />
+    <Resource Include="Images\IcoMap\Hexagon\Blue.png" />
+    <Resource Include="Images\IcoMap\Hexagon\Brown.png" />
+    <Resource Include="Images\IcoMap\Hexagon\Green.png" />
+    <Resource Include="Images\IcoMap\Hexagon\Red.png" />
+    <Resource Include="Images\IcoMap\Hexagon\White.png" />
+    <Resource Include="Images\IcoMap\Hexagon\Yellow.png" />
+    <Resource Include="Images\IcoMap\Square\Blue.png" />
+    <Resource Include="Images\IcoMap\Square\Brown.png" />
+    <Resource Include="Images\IcoMap\Square\Green.png" />
+    <Resource Include="Images\IcoMap\Square\Red.png" />
+    <Resource Include="Images\IcoMap\Square\White.png" />
+    <Resource Include="Images\IcoMap\Square\Yellow.png" />
+    <Resource Include="Images\IcoMap\Star\Blue.png" />
+    <Resource Include="Images\IcoMap\Star\Brown.png" />
+    <Resource Include="Images\IcoMap\Star\Green.png" />
+    <Resource Include="Images\IcoMap\Star\Red.png" />
+    <Resource Include="Images\IcoMap\Star\White.png" />
+    <Resource Include="Images\IcoMap\Star\Yellow.png" />
+    <Resource Include="Images\IcoMap\Triangle\Blue.png" />
+    <Resource Include="Images\IcoMap\Triangle\Brown.png" />
+    <Resource Include="Images\IcoMap\Triangle\Green.png" />
+    <Resource Include="Images\IcoMap\Triangle\Red.png" />
+    <Resource Include="Images\IcoMap\Triangle\White.png" />
+    <Resource Include="Images\IcoMap\Triangle\Yellow.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
